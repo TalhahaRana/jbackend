@@ -3,6 +3,10 @@ from flask import Flask
 from extensions import init_extensions
 from routes.auth_routes import auth_bp
 from routes.job_routes import job_bp
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 app = Flask(__name__)
 
