@@ -19,6 +19,11 @@ init_extensions(app)
 app.register_blueprint(auth_bp, url_prefix='/auth')
 app.register_blueprint(job_bp, url_prefix='/api')
 
+# Root route
+@app.route('/')
+def home():
+    return "Welcome to the Job Backend!"
+
 # No need for db.create_all() as we're using Supabase directly
 
 if __name__ == '__main__':
